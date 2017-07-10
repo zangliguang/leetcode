@@ -17,20 +17,20 @@ public class ReverseLinkedList {
     }
 
 
-    public ListNode reverseList2(ListNode head) {
-        if (head == null || head.next == null) return head;
+    public ListNode reverseList2(ListNode root) {
+        if (root == null || root.next == null) return root;
 
-        ListNode pre = head;
-        ListNode p = head.next;
-        pre.next = null;
+        ListNode current = root;
+        ListNode p = root.next;
+        current.next = null;
         ListNode nxt;
         while (p != null) {
             nxt = p.next;
-            p.next = pre;
-            pre = p;
+            p.next = current;
+            current = p;
             p = nxt;
         }
-        return pre;
+        return current;
     }
 
     public class ListNode {

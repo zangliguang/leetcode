@@ -9,7 +9,7 @@ public class SingleTest2 {
         private static final SingleTest2 instance = new SingleTest2();
     }
 
-    public SingleTest2 getInstance() {
+    public static SingleTest2 getInstance() {
 
         return SingleTest2Hold.instance;
     }
