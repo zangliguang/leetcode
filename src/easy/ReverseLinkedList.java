@@ -1,27 +1,24 @@
 package easy;
 
 /**
- * Created by zangliguang on 2017/6/14.
+ * Created by zangliguang on 2017/6/14.Num206
  */
 public class ReverseLinkedList {
 
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
-
-        ListNode p = head.next;
-        ListNode n = reverseList(p);
-
+        ListNode p = reverseList(head.next);
+        head.next.next = head;
         head.next = null;
-        p.next = head;
-        return n;
+        return p;
     }
 
 
-    public ListNode reverseList2(ListNode root) {
-        if (root == null || root.next == null) return root;
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) return head;
 
-        ListNode current = root;
-        ListNode p = root.next;
+        ListNode current = head;
+        ListNode p = head.next;
         current.next = null;
         ListNode nxt;
         while (p != null) {
@@ -31,6 +28,20 @@ public class ReverseLinkedList {
             p = nxt;
         }
         return current;
+    }
+
+    public ListNode reverseList3(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode nextTemp;
+        while (curr != null) {
+            nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        return prev;
     }
 
     public class ListNode {
