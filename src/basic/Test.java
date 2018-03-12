@@ -9,9 +9,22 @@ public class Test {
     public static void main(String[] args) {
         String s="😄";
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
-        System.out.println(timeStamp);
+        System.out.println(getDurationStr(600));
     }
 
+
+
+    private static String getDurationStr(int duration) {
+        int seconds = duration % 60;
+        duration -= seconds;
+        duration /= 60;
+        int minutes = duration % 60;
+        StringBuilder sb = new StringBuilder();
+        sb.append(minutes > 9 ? minutes + ":": ("0" + minutes + ":"));
+        sb.append(seconds > 9 ? seconds : ("0" + seconds));
+        sb.toString();
+        return sb.toString();
+    }
     public static String gbEncoding(final String gbString) {
         char[] utfBytes = gbString.toCharArray();
         String unicodeBytes = "";
