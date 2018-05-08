@@ -1,18 +1,30 @@
 package uncomplete.test;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by zangliguang on 2017/7/6.
  */
 public class Test {
     public static void main(String[] args) {
-        int[] nums=new int[] {1,2,3};
-        System.out.println("结果："+divide(25,4));
+        File directory = new File("");//参数为空
+        String courseFile = null;
+        try {
+            courseFile = directory.getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(courseFile);
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println( System.getProperty("java.class.path"));
+        System.out.println( System.getProperty("java.class.path"));
+    }
+
+    private void printPath() {
+        File f = new File(this.getClass().getResource("/").getPath());
+        System.out.println(f);
     }
 
 

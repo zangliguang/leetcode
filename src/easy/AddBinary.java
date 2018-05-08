@@ -22,7 +22,6 @@ public class AddBinary {
         char[] bc = b.toCharArray();
 
         int bl = bc.length;
-        int al = ac.length;
 
         for (int j = bl - 1; j >= 0; j--) {
             if (bc[j] == '0') {

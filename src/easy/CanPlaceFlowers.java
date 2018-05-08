@@ -57,7 +57,7 @@ public class CanPlaceFlowers {
             }
 
         }
-        if (head >= 0 && tail == flowerbed.length) {
+        if (head >= 0) {
             n -= getflowerNum(head, tail, flowerbed.length);
         }
         return n <= 0;

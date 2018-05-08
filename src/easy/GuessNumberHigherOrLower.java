@@ -31,13 +31,13 @@ public class GuessNumberHigherOrLower {
         int end = n;
         int mid;
         int tmp;
-        while(start < end){
-            mid = (start+end)>>>1;
+        while (start < end) {
+            mid = (start + end) >>> 1;
             tmp = guess(mid);
-            if ( tmp == 0) return mid;
-            else if ( tmp == 1){
+            if (tmp == 0) return mid;
+            else if (tmp == 1) {
                 start = mid + 1;
-            } else{
+            } else {
                 end = mid - 1;
             }
         }

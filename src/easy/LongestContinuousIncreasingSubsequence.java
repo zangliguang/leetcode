@@ -36,7 +36,6 @@ public class LongestContinuousIncreasingSubsequence {
             } else {
                 result = Math.max(result, length);
                 length = 1;
-
             }
             previous = nums[i];
 

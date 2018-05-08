@@ -4,8 +4,6 @@ package easy;
  * Created by zangliguang on 2017/7/10.Num387
  */
 
-import java.util.Arrays;
-
 /**
  * Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
  * <p>

@@ -30,7 +30,6 @@ public class Base7 {
         num = Math.abs(num);
         StringBuilder sb = new StringBuilder();
         while (num > 0) {
-            int tempNum = num;
             sb.insert(0, String.valueOf(num % 7));
             num = num - num % 7;
             num /= 7;

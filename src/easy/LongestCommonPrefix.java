@@ -22,9 +22,7 @@ public class LongestCommonPrefix {
             char[] b = strs[strs.length - 1].toCharArray();
             int length = Math.min(a.length, b.length);
             for (int i = 0; i < length && b[i] == a[i]; i++) {
-
                 prefix.append(b[i]);
-
             }
         }
         return prefix.toString();

@@ -37,8 +37,8 @@ public class DistributeCandies {
         int[] cadies=new int[]{1,1,1,1,2,2,2,3,3,3};
         System.out.println(distributeCandies(cadies));
     }
-    public static int distributeCandies(int[] candies) {
-        Set<Integer> kindsNum=new HashSet<Integer>();
+    private static int distributeCandies(int[] candies) {
+        Set<Integer> kindsNum= new HashSet<>();
         for (int i = 0; i < candies.length; i++) {
             kindsNum.add(candies[i]);
         }

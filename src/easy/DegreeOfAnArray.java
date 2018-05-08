@@ -52,15 +52,12 @@ public class DegreeOfAnArray {
             }
 
         }
-        Collections.sort(list, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                int result = frequencyMap.get(o2) - frequencyMap.get(o1);
-                if (result == 0) {
-                    return taile.get(o1) - head.get(o1) - taile.get(o2) + head.get(o2);
-                }
-                return result;
+        Collections.sort(list, (o1, o2) -> {
+            int result = frequencyMap.get(o2) - frequencyMap.get(o1);
+            if (result == 0) {
+                return taile.get(o1) - head.get(o1) - taile.get(o2) + head.get(o2);
             }
+            return result;
         });
         return taile.get(list.get(0)) - head.get(list.get(0));
 

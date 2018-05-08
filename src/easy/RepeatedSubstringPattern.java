@@ -36,17 +36,15 @@ public class RepeatedSubstringPattern {
     }
 
     public static boolean repeatedSubstringPattern(String s) {
-        boolean result = false;
         for (int i = 1; i <= s.length() / 2; i++) {
             if (s.length() % i > 0) {
                 continue;
             }
-            String tmp = s;
-            String substring = tmp.substring(0, i);
-            if (tmp.replace(substring, "").trim().length() == 0) {
+            String substring = s.substring(0, i);
+            if (s.replace(substring, "").trim().length() == 0) {
                 return true;
             }
         }
-        return result;
+        return false;
     }
 }

@@ -15,9 +15,9 @@ import java.util.Arrays;
 public class MergeSortedArray {
     public static void main(String[] args) {
 
-        int[] nums1=new int[]{0};
-        int[] nums2=new int[]{1};
-        merge(nums1,0,nums2,1);
+        int[] nums1 = new int[]{0};
+        int[] nums2 = new int[]{1};
+        merge(nums1, 0, nums2, 1);
         System.out.println(nums1);
 
     }
@@ -25,17 +25,17 @@ public class MergeSortedArray {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int endIndex = m + n - 1;
         for (int i = endIndex; i >= 0; i--) {
-            if(m==0&&n>0){
+            if (m == 0 && n > 0) {
                 nums1[i] = nums2[n - 1];
                 n--;
                 continue;
             }
-            if(m>0&&n==0){
+            if (m > 0 && n == 0) {
                 nums1[i] = nums1[m - 1];
                 m--;
                 continue;
             }
-            if(m==0&&n==0){
+            if (m == 0 && n == 0) {
                 return;
             }
             if (nums1[m - 1] > nums2[n - 1]) {
@@ -48,9 +48,4 @@ public class MergeSortedArray {
         }
     }
 
-    private void exchangeNum(int a, int b) {
-        a += b;
-        b = a - b;
-        a -= b;
-    }
 }
