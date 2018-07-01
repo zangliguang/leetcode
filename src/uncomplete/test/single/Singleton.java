@@ -1,4 +1,4 @@
-package uncomplete;
+package uncomplete.test.single;
 
 public class Singleton {
     public Singleton() {

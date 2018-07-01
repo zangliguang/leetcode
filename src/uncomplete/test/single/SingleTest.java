@@ -1,4 +1,4 @@
-package uncomplete;
+package uncomplete.test.single;
 
 /**
  * Created by zangliguang on 2017/7/4.
