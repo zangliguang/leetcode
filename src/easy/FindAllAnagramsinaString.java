@@ -38,7 +38,7 @@ import java.util.List;
  */
 public class FindAllAnagramsinaString {
     public static void main(String[] args) {
-        System.out.println(findAnagrams("cbaebabacd", "abc"));
+        System.out.println(findAnagrams2("cbaebabacd", "abc"));
     }
 
     /**
