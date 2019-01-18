@@ -23,11 +23,17 @@ public class Test {
 //        System.out.println(System.getProperty("user.dir"));
 //        System.out.println( System.getProperty("java.class.path"));
 //        System.out.println( System.getProperty("java.class.path"));
-
-        String ts = String.valueOf(System.currentTimeMillis() / 1000);
-        String vid = "257000";
-        String url=String.format("http://api.rekonquer.com/psvs/mp4.php?vid=%s&ts=%s&sign=%s", vid, ts, b(vid, ts));
-        System.out.println(url);
+        String[] vids=new String[]{"179094","238753","249813"};
+        for (int i = 0; i < vids.length; i++) {
+            String ts = String.valueOf(System.currentTimeMillis() / 1000);
+            String vid = vids[i];
+            String url=String.format("http://api.rekonquer.com/psvs/mp4.php?vid=%s&ts=%s&sign=%s", vid, ts, b(vid, ts));
+            System.out.println(url);
+        }
+//        String ts = String.valueOf(System.currentTimeMillis() / 1000);
+//        String vid = "152915";
+//        String url=String.format("http://api.rekonquer.com/psvs/mp4.php?vid=%s&ts=%s&sign=%s", vid, ts, b(vid, ts));
+//        System.out.println(url);
     }
 
 
