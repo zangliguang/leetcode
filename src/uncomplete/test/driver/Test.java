@@ -1,4 +1,4 @@
-package uncomplete.test;
+package uncomplete.test.driver;
 
 
 import java.io.File;
@@ -12,28 +12,13 @@ import java.util.Arrays;
  */
 public class Test {
     public static void main(String[] args) {
-//        File directory = new File("");//参数为空
-//        String courseFile = null;
-//        try {
-//            courseFile = directory.getCanonicalPath();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(courseFile);
-//        System.out.println(System.getProperty("user.dir"));
-//        System.out.println( System.getProperty("java.class.path"));
-//        System.out.println( System.getProperty("java.class.path"));
-        String[] vids=new String[]{"179094","238753","249813"};
+        String[] vids=new String[]{"99984"};
         for (int i = 0; i < vids.length; i++) {
             String ts = String.valueOf(System.currentTimeMillis() / 1000);
             String vid = vids[i];
             String url=String.format("http://api.rekonquer.com/psvs/mp4.php?vid=%s&ts=%s&sign=%s", vid, ts, b(vid, ts));
             System.out.println(url);
         }
-//        String ts = String.valueOf(System.currentTimeMillis() / 1000);
-//        String vid = "152915";
-//        String url=String.format("http://api.rekonquer.com/psvs/mp4.php?vid=%s&ts=%s&sign=%s", vid, ts, b(vid, ts));
-//        System.out.println(url);
     }
 
 

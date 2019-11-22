@@ -1,5 +1,7 @@
 package uncomplete.test.single;
 
+import java.util.LinkedHashMap;
+
 public class Singleton {
     public Singleton() {
     }
