@@ -1,6 +1,4 @@
-package uncomplete.test.single;
-
-import java.util.LinkedHashMap;
+package interview.designPattern.single;
 
 public class Singleton {
     public Singleton() {
