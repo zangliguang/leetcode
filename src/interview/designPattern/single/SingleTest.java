@@ -1,4 +1,4 @@
-package uncomplete.test.single;
+package interview.designPattern.single;
 
 /**
  * Created by zangliguang on 2017/7/4.

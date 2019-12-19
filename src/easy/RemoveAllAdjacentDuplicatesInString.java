@@ -1,6 +1,8 @@
 package easy;
 
 
+import java.util.Stack;
+
 /**
  * 1047. Remove All Adjacent Duplicates In String
  * Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.
@@ -31,34 +33,31 @@ public class RemoveAllAdjacentDuplicatesInString {
     }
 
     public static String removeDuplicates(String S) {
+        int i = 0, n = S.length();
+        char[] res = S.toCharArray();
+        for (int j = 0; j < n; ++j, ++i) {
+            res[i] = res[j];
+            if (i > 0 && res[i - 1] == res[i]) // count = 2
+                i -= 2;
+        }
+        return new String(res, 0, i);
+
+    }
+
+    public String removeDuplicates2(String S) {
+        if(S == null || S.length() == 0)
+            return new String();
+        Stack<Character> stack = new Stack();
         StringBuilder sb = new StringBuilder();
-        char[] chars = S.toCharArray();
-        int head = 0;
-        int tail = 1;
-        int length = S.length();
-        while (tail < length) {
-            if (chars[head] == chars[tail]) {
-
-            } else {
-                if (tail - head == 1) {
-                    sb.append(chars[head]);
-
-                }
-                head = tail;
-
-            }
-            tail++;
+        for(int i = 0; i < S.length(); i++) {
+            if(!stack.isEmpty() && stack.peek() == S.charAt(i))
+                while(!stack.isEmpty() && stack.peek() == S.charAt(i))
+                    stack.pop();
+            else
+                stack.push(S.charAt(i));
         }
-
-        if (head == length - 1 && head != 0) {
-            sb.append(chars[head]);
-        }
-        String str = sb.toString();
-        if (str.length() == length) {
-            return str;
-        } else {
-            return removeDuplicates(str);
-        }
-
+        while(!stack.isEmpty())
+            sb.append(stack.pop());
+        return sb.reverse().toString();
     }
 }
