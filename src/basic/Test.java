@@ -7,9 +7,15 @@ import java.util.Properties;
 
 public class Test {
     public static void main(String[] args) {
-        String s="😄";
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
-        System.out.println(getDurationStr(600));
+
+        String a = "1,2,3,";
+        System.out.println( a.split(",").length);
+
+//
+//
+//        String s="😄";
+//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
+//        System.out.println(getDurationStr(600));
     }
 
 

@@ -5,8 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Operator {
     public static void main(String[] args) throws IOException {
