@@ -1,8 +1,8 @@
 package easy;
 
-import java.util.*;
-
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * 1160. Find Words That Can Be Formed by Characters

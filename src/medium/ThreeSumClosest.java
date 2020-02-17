@@ -1,7 +1,5 @@
 package medium;
 
-import sun.plugin.javascript.navig.Array;
-
 import java.util.Arrays;
 
 /**
