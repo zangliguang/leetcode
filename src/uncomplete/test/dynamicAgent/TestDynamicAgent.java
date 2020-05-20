@@ -1,7 +1,6 @@
 package uncomplete.test.dynamicAgent;
 
 import java.lang.reflect.Proxy;
-import java.util.LinkedHashMap;
 
 public class TestDynamicAgent {
     public static void main(String[] args) {
