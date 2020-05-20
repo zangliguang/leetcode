@@ -31,7 +31,7 @@ public class MD5Demo {
 
     //主函数调用测试
     public static void main(String[] args) {
-        System.out.println(md5("12345678"));
+        System.out.println(md5("123456"));
     }
 
 }
