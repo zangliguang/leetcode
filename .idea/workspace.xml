@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="162f937a-a52f-4901-a528-4e01c177c3c4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bcprov_jdk15on_1_64.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_alibaba_fastjson_1_2_55.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/fastjson_1_2_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/easy/LargestTimeforGivenDigits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/LargestTimeforGivenDigits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uncomplete/tools/NetWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uncomplete/tools/NetWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uncomplete/tools/WechatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uncomplete/tools/WechatUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +55,14 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="easy" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\zangliguang\workspace\leetcode\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FriendCircles">
+  <component name="RunManager" selected="Application.CountSquareSubmatriceswithAllOnes">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -142,6 +128,48 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="BuildanArrayWithStackOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="easy.BuildanArrayWithStackOperations" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CountSquareSubmatriceswithAllOnes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="medium.CountSquareSubmatriceswithAllOnes" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DecodeString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="medium.DecodeString" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FriendCircles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-14" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -149,7 +177,7 @@
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="medium.*" />
+          <option name="PATTERN" value="easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,55 +185,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameofLife" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="medium.GameofLife" />
-      <module name="intellij" />
+    <configuration name="IncreasingDecreasingString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="easy.IncreasingDecreasingString" />
+      <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MinimumNumberofStepstoMakeTwoStringsAnagram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="medium.MinimumNumberofStepstoMakeTwoStringsAnagram" />
-      <module name="intellij" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RevealCardsInIncreasingOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="medium.RevealCardsInIncreasingOrder" />
-      <module name="intellij" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrappingRainWater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hard.TrappingRainWater" />
-      <module name="intellij" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hard.*" />
+          <option name="PATTERN" value="easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -236,19 +222,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.GameofLife" />
-      <item itemvalue="Application.MinimumNumberofStepstoMakeTwoStringsAnagram" />
-      <item itemvalue="Application.RevealCardsInIncreasingOrder" />
-      <item itemvalue="Application.TrappingRainWater" />
       <item itemvalue="Application.FriendCircles" />
+      <item itemvalue="Application.DecodeString" />
+      <item itemvalue="Application.BuildanArrayWithStackOperations" />
+      <item itemvalue="Application.IncreasingDecreasingString" />
+      <item itemvalue="Application.CountSquareSubmatriceswithAllOnes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CountSquareSubmatriceswithAllOnes" />
+        <item itemvalue="Application.IncreasingDecreasingString" />
+        <item itemvalue="Application.BuildanArrayWithStackOperations" />
+        <item itemvalue="Application.DecodeString" />
         <item itemvalue="Application.FriendCircles" />
-        <item itemvalue="Application.GameofLife" />
-        <item itemvalue="Application.TrappingRainWater" />
-        <item itemvalue="Application.RevealCardsInIncreasingOrder" />
-        <item itemvalue="Application.MinimumNumberofStepstoMakeTwoStringsAnagram" />
       </list>
     </recent_temporary>
   </component>
@@ -410,6 +396,10 @@
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="290" y="23" key="#FriendCircles/0.23.1280.700@0.23.1280.700" timestamp="1590033777189" />
+    <state x="240" y="23" width="800" height="700" key="#Plugins" timestamp="1590131854306">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state x="240" y="23" width="800" height="700" key="#Plugins/0.23.1280.700@0.23.1280.700" timestamp="1590131854306" />
     <state x="81" y="23" key="#Project_Structure" timestamp="1590032928384">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
@@ -418,46 +408,62 @@
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="57" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.700@0.23.1280.700" timestamp="1590034030288" />
-    <state width="421" height="466" key="DebuggerActiveHint" timestamp="1590033977792">
+    <state x="378" y="160" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1590133636081">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
-    <state width="421" height="466" key="DebuggerActiveHint/0.23.1280.700@0.23.1280.700" timestamp="1590033977792" />
-    <state width="1238" height="215" key="GridCell.Tab.0.bottom" timestamp="1590034791602">
+    <state x="378" y="160" key="#com.intellij.ide.util.PackageChooserDialog/0.23.1280.700@0.23.1280.700" timestamp="1590133636081" />
+    <state x="370" y="116" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590125453458">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state x="370" y="116" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.700@0.23.1280.700" timestamp="1590125453458" />
+    <state x="408" y="274" width="463" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590133637883">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state x="408" y="274" width="463" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.700@0.23.1280.700" timestamp="1590133637883" />
+    <state x="403" y="83" key="#xdebugger.evaluate" timestamp="1590050478084">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state x="403" y="83" key="#xdebugger.evaluate/0.23.1280.700@0.23.1280.700" timestamp="1590050478084" />
+    <state width="421" height="466" key="DebuggerActiveHint" timestamp="1590050761505">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state width="421" height="466" key="DebuggerActiveHint/0.23.1280.700@0.23.1280.700" timestamp="1590050761505" />
+    <state width="1238" height="215" key="GridCell.Tab.0.bottom" timestamp="1590164982003">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state width="1237" height="261" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582188672225" />
-    <state width="1238" height="215" key="GridCell.Tab.0.bottom/0.23.1280.700@0.23.1280.700" timestamp="1590034791602" />
-    <state width="1238" height="215" key="GridCell.Tab.0.center" timestamp="1590034791601">
+    <state width="1238" height="215" key="GridCell.Tab.0.bottom/0.23.1280.700@0.23.1280.700" timestamp="1590164982003" />
+    <state width="1238" height="215" key="GridCell.Tab.0.center" timestamp="1590164982002">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state width="1237" height="261" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582188672225" />
-    <state width="1238" height="215" key="GridCell.Tab.0.center/0.23.1280.700@0.23.1280.700" timestamp="1590034791601" />
-    <state width="1238" height="215" key="GridCell.Tab.0.left" timestamp="1590034791601">
+    <state width="1238" height="215" key="GridCell.Tab.0.center/0.23.1280.700@0.23.1280.700" timestamp="1590164982002" />
+    <state width="1238" height="215" key="GridCell.Tab.0.left" timestamp="1590164982002">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state width="1237" height="261" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582188672225" />
-    <state width="1238" height="215" key="GridCell.Tab.0.left/0.23.1280.700@0.23.1280.700" timestamp="1590034791601" />
-    <state width="1238" height="215" key="GridCell.Tab.0.right" timestamp="1590034791602">
+    <state width="1238" height="215" key="GridCell.Tab.0.left/0.23.1280.700@0.23.1280.700" timestamp="1590164982002" />
+    <state width="1238" height="215" key="GridCell.Tab.0.right" timestamp="1590164982003">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state width="1237" height="261" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582188672225" />
-    <state width="1238" height="215" key="GridCell.Tab.0.right/0.23.1280.700@0.23.1280.700" timestamp="1590034791602" />
-    <state width="1238" height="215" key="GridCell.Tab.1.bottom" timestamp="1590034791604">
+    <state width="1238" height="215" key="GridCell.Tab.0.right/0.23.1280.700@0.23.1280.700" timestamp="1590164982003" />
+    <state width="1238" height="215" key="GridCell.Tab.1.bottom" timestamp="1590164982005">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
-    <state width="1238" height="215" key="GridCell.Tab.1.bottom/0.23.1280.700@0.23.1280.700" timestamp="1590034791604" />
-    <state width="1238" height="215" key="GridCell.Tab.1.center" timestamp="1590034791603">
+    <state width="1238" height="215" key="GridCell.Tab.1.bottom/0.23.1280.700@0.23.1280.700" timestamp="1590164982005" />
+    <state width="1238" height="215" key="GridCell.Tab.1.center" timestamp="1590164982004">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
-    <state width="1238" height="215" key="GridCell.Tab.1.center/0.23.1280.700@0.23.1280.700" timestamp="1590034791603" />
-    <state width="1238" height="215" key="GridCell.Tab.1.left" timestamp="1590034791603">
+    <state width="1238" height="215" key="GridCell.Tab.1.center/0.23.1280.700@0.23.1280.700" timestamp="1590164982004" />
+    <state width="1238" height="215" key="GridCell.Tab.1.left" timestamp="1590164982004">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
-    <state width="1238" height="215" key="GridCell.Tab.1.left/0.23.1280.700@0.23.1280.700" timestamp="1590034791603" />
-    <state width="1238" height="215" key="GridCell.Tab.1.right" timestamp="1590034791603">
+    <state width="1238" height="215" key="GridCell.Tab.1.left/0.23.1280.700@0.23.1280.700" timestamp="1590164982004" />
+    <state width="1238" height="215" key="GridCell.Tab.1.right" timestamp="1590164982005">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
-    <state width="1238" height="215" key="GridCell.Tab.1.right/0.23.1280.700@0.23.1280.700" timestamp="1590034791603" />
+    <state width="1238" height="215" key="GridCell.Tab.1.right/0.23.1280.700@0.23.1280.700" timestamp="1590164982005" />
     <state x="144" y="23" key="SettingsEditor" timestamp="1590033840707">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
@@ -467,15 +473,20 @@
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="381" y="294" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.700@0.23.1280.700" timestamp="1590031210800" />
-    <state x="568" y="158" key="extract.method.dialog" timestamp="1590030960346">
+    <state x="669" y="171" key="extract.method.dialog" timestamp="1590217128342">
       <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="568" y="131" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1581929074404" />
-    <state x="568" y="158" key="extract.method.dialog/0.23.1280.700@0.23.1280.700" timestamp="1590030960346" />
-    <state x="332" y="95" width="617" height="490" key="find.popup" timestamp="1582019550303">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="669" y="171" key="extract.method.dialog/0.23.1280.700@0.23.1280.700" timestamp="1590217128342" />
+    <state x="332" y="121" width="617" height="505" key="find.popup" timestamp="1590161288612">
+      <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="332" y="95" width="617" height="490" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1582019550303" />
+    <state x="332" y="121" width="617" height="505" key="find.popup/0.23.1280.700@0.23.1280.700" timestamp="1590161288612" />
+    <state x="305" y="47" width="670" height="676" key="search.everywhere.popup" timestamp="1590164220933">
+      <screen x="0" y="23" width="1280" height="700" />
+    </state>
+    <state x="305" y="47" width="670" height="676" key="search.everywhere.popup/0.23.1280.700@0.23.1280.700" timestamp="1590164220933" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -585,6 +596,31 @@
           <line>51</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/medium/DecodeString.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/medium/DecodeString.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/medium/DecodeString.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/easy/BuildanArrayWithStackOperations.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/medium/CountSquareSubmatriceswithAllOnes.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -599,54 +635,5 @@
     <SUITE FILE_PATH="coverage/leetcode$NetWork.ic" NAME="NetWork Coverage Results" MODIFIED="1580888513313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uncomplete.tools.*</FILTER>
     </SUITE>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>(char2[j] - '0') * (char1[i] - '0') * (Math.pow(10,char1.length+char2.length-j-i-2))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>char1.length+char2.length-j-j-2</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(Math.pow(10,char1.length+char2.length-j-j-2))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(char2[j] - '0') * (char1[i] - '0')</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(Math.pow(10,j + i))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(10 ^ (j + i))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(char2[j] - '0') * (char1[j] - '0') * 10 ^ (j + i)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>char2[j] - '0'</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>temp[temp.length-1]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>
