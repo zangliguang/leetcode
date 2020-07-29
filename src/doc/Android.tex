@@ -1,0 +1,237 @@
+1，计算图片大小：
+图片内存大小的计算公式是 ：图片高度 * 图片宽度 * 一个像素占用的字节数
+numBytes = width * height * bitsPerPixel / 8
+４个byte来表示--１个byte（８位）代表red，另外３个byte分别代表green、blue和alpha透明通道。这个就简称RGBA8888
+
+=========================================
+2，APP 启动流程
+ActivityManagerService：（AMS）AMS是Android中最核心的服务之一，主要负责系统中四大组件的启动、切换、调度及应用进程的管理和调度等工作，
+                         其职责与操作系统中的进程管理和调度模块相类似，因此它在Android中非常重要，它本身也是一个Binder的实现类。
+
+Instrumentation：监控应用程序和系统的交互；
+
+ActivityThread：应用的入口类，通过调用main方法，开启消息循环队列。ActivityThread所在的线程被称为主线程；
+
+ApplicationThread：ApplicationThread提供Binder通讯接口，AMS则通过代理调用此App进程的本地方法
+
+ActivityManagerProxy：AMS服务在当前进程的代理类，负责与AMS通信。
+
+ApplicationThreadProxy：ApplicationThread在AMS服务中的代理类，负责与ApplicationThread通信。
+
+可以说，启动的流程就是通过这六个大类在这三个进程之间不断通信的过程；
+
+我先简单的梳理一下app的启动的步骤：
+
+（1）启动的起点发生在Launcher活动中，启动一个app说简单点就是启动一个Activity，那么我们说过所有组件的启动，切换，调度都由AMS来负责的，
+    所以第一步就是Launcher响应了用户的点击事件，然后通知AMS
+
+（2）AMS得到Launcher的通知，就需要响应这个通知，主要就是新建一个Task去准备启动Activity，并且告诉Launcher你可以休息了（Paused）；
+
+（3）Launcher得到AMS让自己“休息”的消息，那么就直接挂起，并告诉AMS我已经Paused了；
+
+（4）AMS知道了Launcher已经挂起之后，就可以放心的为新的Activity准备启动工作了，
+    首先，APP肯定需要一个新的进程去进行运行，所以需要创建一个新进程，这个过程是需要Zygote参与的，
+    AMS通过Socket去和Zygote协商，如果需要创建进程，那么就会fork自身，创建一个线程，新的进程会导入ActivityThread类，
+    这就是每一个应用程序都有一个ActivityThread与之对应的原因；
+
+（5）进程创建好了，通过调用上述的ActivityThread的main方法，这是应用程序的入口，在这里开启消息循环队列，这也是主线程默认绑定Looper的原因；
+
+（6）这时候，App还没有启动完，要永远记住，四大组建的启动都需要AMS去启动，将上述的应用进程信息注册到AMS中，AMS再在堆栈顶部取得要启动的Activity，
+    通过一系列链式调用去完成App启动；
+
+
+=========================================
+
+3，Android 系统启动过程
+  从系统层看：
+
+  linux 系统层
+  Android系统服务层
+  Zygote
+  从开机启动到Home Launcher：
+
+  启动bootloader （小程序；初始化硬件）
+  加载系统内核 （先进入实模式代码在进入保护模式代码）
+  启动init进程（用户级进程 ，进程号为1）
+  启动Zygote进程（初始化Dalvik VM等）
+  启动Runtime进程
+  启动本地服务（system service）
+  启动 HomeLauncher
+
+=========================================
+
+4，APk 安装过程
+  Android应用安装有如下四种方式：
+  1.系统应用安装――开机时完成，没有安装界面
+
+  2.网络下载应用安装――通过market应用完成，没有安装界面
+
+  3.ADB工具安装――没有安装界面。
+
+  4.第三方应用安装――通过SD卡里的APK文件安装，有安装界面，由 packageinstaller.apk应用处理安装及卸载过程的界面。
+
+  应用安装的流程及路径
+  应用安装涉及到如下几个目录：
+
+  system/app ---------------系统自带的应用程序，获得adb root权限才能删除
+
+  data/app ---------------用户程序安装的目录。安装时把 apk文件复制到此目录
+
+  data/data ---------------存放应用程序的数据
+
+  data/dalvik-cache----将apk中的dex文件安装到dalvik-cache目录下(dex文件是dalvik虚拟机的可执行文件,其大小约为原始apk文件大小的四分之一)
+
+  安装过程：
+  复制APK安装包到data/app目录下，解压并扫描安装包，把dex文件(Dalvik字节码)保存到dalvik-cache目录，并data/data目录下创建对应的应用数据目录。
+
+=========================================
+
+5，Activity启动涉及到的类
+首先要简单介绍一下Activity启动过程涉及到的类，以便于更好的理解这个启动过程。
+
+ActivityThread：App启动的入口
+ApplicationThread：ActivityThread的内部类，继承Binder，可以进程跨进程通信。
+ApplicationThreadProxy：ApplicationThread的一个本地代理，其它的client端通过这个对象调用server端ApplicationThread中方法。
+Instrumentation：负责发起Activity的启动、并具体负责Activity的创建以及Activity生命周期的回调。一个应用进程只会有一个Instrumentation对象，
+                 App内的所有Activity都持有该对象的引用。
+ActivityManagerService：简称AMS，是service端对象，负责管理系统中所有的Activity
+ActivityManagerProxy：是ActivityManagerService的本地代理
+ActivityStack：Activity在AMS的栈管理，用来记录已经启动的Activity的先后关系，状态信息等。通过ActivityStack决定是否需要启动新的进程。
+ActivityRecord：ActivityStack的管理对象，每个Activity在AMS对应一个ActivityRecord，来记录Activity的状态以及其他的管理信息。
+                其实就是服务器端的Activity对象的映像。
+TaskRecord：AMS抽象出来的一个“任务”的概念，是记录ActivityRecord的栈，
+            一个“Task”包含若干个ActivityRecord。AMS用TaskRecord确保Activity启动和退出的顺序。
+
+
+Activity 启动过程
+Activity 启动过程是由 ActivityMangerService（amS) 来启动的，
+底层原理是 Binder实现的 最终交给 ActivityThread 的 performActivity 方法来启动她
+
+ActivityThread大概可以分为以下五个步骤
+
+通过ActivityClientRecoed对象获取Activity的组件信息
+通过Instrument的newActivity使用类加载器创建Activity对象
+检验Application是否存在，不存在的话，创建一个，保证 只有一个Application
+通过ContextImpl和Activity的attach方法来完成一些初始化操作
+调用oncreat方法
+
+=========================================
+
+6，view 加载流程
+1.通过Activity的setContentView方法间接调用Phonewindow的setContentView（），
+  在PhoneWindow中通过getLayoutInflate（）得到LayoutInflate对象
+
+2.通过LayoutInflate对象去加载View，主要步骤是
+
+（1）通过xml的Pull方式去解析xml布局文件，获取xml信息，并保存缓存信息，因为这些数据是静态不变的
+
+（2）根据xml的tag标签通过反射创建View逐层构建View
+
+（3）递归构建其中的子View，并将子View添加到父ViewGroup中
+
+=========================================
+7，View的绘制流程
+  这一部分打算从四个方面来说：
+
+  1.View树的绘制流程
+
+  2.mesure（）方法
+
+  3.layout（）方法
+
+  4.draw（）方法
+
+  首先说说这个View树的绘制流程：
+
+  说到这个流程，我们就必须先搞清楚这个流程是谁去负责的
+
+  实际上，view树的绘制流程是通过ViewRoot去负责绘制的，ViewRoot这个类的命名有点坑，最初看到这个名字，
+  翻译过来是view的根节点，但是事实完全不是这样，ViewRoot其实不是View的根节点，它连view节点都算不上，
+  它的主要作用是View树的管理者，负责将DecorView和PhoneWindow“组合”起来，而View树的根节点严格意义上来说只有DecorView；
+  每个DecorView都有一个ViewRoot与之关联，这种关联关系是由WindowManager去进行管理的；
+
+  那么decorView与ViewRoot的关联关系是在什么时候建立的呢？答案是Activity启动时，
+  ActivityThread.handleResumeActivity()方法中建立了它们两者的关联关系，
+  当建立好了decorView与ViewRoot的关联后，ViewRoot类的requestLayout()方法会被调用，
+  以完成应用程序用户界面的初次布局。也就是说，当Activity获取到了用户的触摸焦点时，就会请求开始绘制布局，
+  这也是整个流程的起点；而实际被调用的是ViewRootImpl类的requestLayout()方法
+
+
+
+ =========================================
+
+8.Android内存管理：
+
+（1）分配机制：弹性分配，刚开始会为APP分配小额内存，根据每个APP的物理内存大小分配，然后在运行时，弹性的为其分配大小；
+
+（2）回收机制：五大分级，前台->可见->服务->后台->空进程，优先级越低，被杀死的概率越大，lru算法，回收效益；
+
+
+
+ =========================================
+8，Service 生命周期
+ =========================================
+9，IntentService
+ =========================================
+10,bind   IdleHandler
+
+ =========================================
+11，flutter 与native通信
+1.MethodChannel：Flutter端向native端发送通知，通常用来调用native的某一个方法。
+
+2.EventChannel：用于数据流的通信，有监听功能，比如电量变化后直接推送给Flutter端。
+
+3.BasicMessageChannel：用于传递字符串或半结构体的数据。
+
+register plugin
+
+
+ =========================================
+12， okhttp 拦截器
+     1>：RetryAndFollowUpInterceptor：重试拦截器
+     2>：BridgeInterceptor：基础的拦截器
+     3>：CacheInterceptor：缓存拦截器
+     4>：ConnectInterceptor：连接的拦截器
+     5>：CallServerInterceptor：
+
+
+
+
+
+=========================================
+
+13 线程池
+提交一个任务，线程池里存活的核心线程数小于线程数corePoolSize时，线程池会创建一个核心线程去处理提交的任务。
+如果线程池核心线程数已满，即线程数已经等于corePoolSize，一个新提交的任务，会被放进任务队列workQueue排队等待执行。
+当线程池里面存活的线程数已经等于corePoolSize了,并且任务队列workQueue也满，判断线程数是否达到maximumPoolSize，即最大线程数是否已满，如果没到达，创建一个非核心线程执行提交的任务。
+如果当前的线程数达到了maximumPoolSize，还有新的任务过来的话，直接采用拒绝策略处理。
+四种拒绝策略
+AbortPolicy(抛出一个异常，默认的)
+DiscardPolicy(直接丢弃任务)
+DiscardOldestPolicy（丢弃队列里最老的任务，将当前这个任务继续提交给线程池）
+CallerRunsPolicy（交给线程池调用所在的线程进行处理)
+
+=========================================
+14，团队
+1，明确需求
+2，拆分需求，工作拆分
+3，技术栈确定，总纲领确定
+4，代码质量监控，项目维护
+
+人才培养，团队建设
+1，功能完成（基本）
+2，重构，完善，修复，提高
+3，技术分享，新技术探究
+
+=========================================
+
+
+15，优先级由高到低排列
+
+前台进程
+可见进程
+服务进程
+后台进程
+空进程
+
+=========================================

@@ -1,7 +1,7 @@
 package interview.designPattern.single;
 
 public class Singleton {
-    public Singleton() {
+    private Singleton() {
     }
 
     private static volatile Singleton instance;
@@ -18,4 +18,7 @@ public class Singleton {
 
         return instance;
     }
+
+
+
 }

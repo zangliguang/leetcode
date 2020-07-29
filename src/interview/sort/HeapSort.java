@@ -18,8 +18,7 @@ public class HeapSort implements IArraySort {
 
         for (int i = len - 1; i > 0; i--) {
             swap(arr, 0, i);
-            len--;
-            heapify(arr, 0, len);
+            heapify(arr, 0, i);
         }
         return arr;
     }

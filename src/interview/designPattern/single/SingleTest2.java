@@ -1,7 +1,7 @@
 package interview.designPattern.single;
 
 public class SingleTest2 {
-    public SingleTest2() {
+    private SingleTest2() {
 
     }
 
