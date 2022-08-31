@@ -4,7 +4,7 @@ package medium;
  * 1476. Subrectangle Queries
  */
 class SubrectangleQueries {
-    int[][] rectangle
+    int[][] rectangle;
 
     public SubrectangleQueries(int[][] rectangle) {
         this.rectangle = rectangle;
