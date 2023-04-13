@@ -8,15 +8,23 @@ import java.io.IOException;
 
 public class Operator {
     public static void main(String[] args) throws IOException {
-//        String[] strs=new String[]{"1221","asdasd","asdasdas"};
-//        ArrayList<String>list=new ArrayList<>();
-//        list.add("asdas");
-//        list.add("asdas");
-//        list.add("asdas");
-//        list.add("asdas");
-//        String result = list.toString();
-//        System.out.println(result.substring(1,result.length()-1));
-        printURl(parseJson());
+       String path="/Users/zangliguang/Desktop/music/";
+       File file=new File(path);
+        for (File listFile : file.listFiles()) {
+            int start = listFile.getName().lastIndexOf("-");
+            if(start==-1){
+                continue;
+            }
+            System.out.println(listFile.getName());
+            int end = listFile.getName().lastIndexOf(".");
+            String substring = listFile.getName().substring(start,end);
+//            String newName =listFile.getName().replace(substring,"");
+            listFile.renameTo(new File(listFile.getAbsolutePath().replace("lrcx","lrc")));
+//            listFile.renameTo(new File(listFile.getAbsolutePath().replace(substring,"")));
+
+        }
+        System.out.println("成功");
+//        printURl(parseJson());
 
     }
 

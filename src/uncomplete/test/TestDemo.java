@@ -15,62 +15,12 @@ import javax.crypto.Cipher;
 
 public class TestDemo {
     public static void main(String[] args) {
-
-//        Calendar c = Calendar.getInstance();
-//        c.set(2020,1,-1);
-//        int y = c.get(Calendar.YEAR);
-//        int m = c.get(Calendar.MONTH);
-//        int day = c.get(Calendar.DAY_OF_MONTH);
-//        int maxDays = c.getActualMaximum(Calendar.DATE);
-//        System.out.println(day);
-//        System.out.println(maxDays);
-//        String aa="类理管合综构机属直级省其及关机央中";
-//        String bb="号4同胡河花莲区城⻄ 校学验实语国外武宣市京北";
-//        extracted(aa);
-//        System.out.println();
-//        extracted(bb);
-        final String JSON_KEY_APP_DEIVCE = "device";
-        final String JSON_KEY_APP_VERSIONTPPE = "versionType";
-        final String JSON_KEY_APP_REGION = "region";
-        final String JSON_KEY_APP_APPVERSION = "appVersion";
-        final String JSON_KEY_APP_MIUIVERSION = "miuiVersion";
-        final String JSON_KEY_APP_CARRIER = "carrier";
-
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("Carrier", "CMCC");
-            jsonObject.put("Brand", 0);
-            jsonObject.put("CITYID", "433");
-            jsonObject.put("DataVersion", "0");
-            jsonObject.put("PackageName", "com.miui.sdk.tc");
-            jsonObject.put("SecKey", "aaaaaaaaaaaa");
-        } catch (JSONException e) {
-            e.printStackTrace();
+        int i=3;
+        float result=1.0f;
+        for (int j = 0; j < i; j++) {
+            result/=2;
         }
-//        System.out.println(encrypt(jsonObject.toString(), "8vh8msy2hew9wqdx"));
 
-        byte[] result ={-126, 30, 120, 85, 60, -115, 98, 7, -88, 68, -38, -127, -52, -100, -99, 13, -117, 4, -43, -28, -76, -114, 1, 63, 10, -106, -35, 123, -123, 53, 47, -72};
-        byte[] key ={37, 30, -28, -10, 113, 22, 109, -120, 92, -101, -72, -23, -55, 1, -62, 116};
-
-
-        final Base64.Encoder encoder = Base64.getEncoder();
-
-        String str= null;
-        try {
-            str = new String(encoder.encode(key), "US-ASCII");
-            System.out.println(byte2Hex(key));
-
-
-            String iosStr= "9c3+OvyKJWu01zqasTXqPj2iLwpsh/Xj4xijjvzj2Oc=";
-//            System.out.println(Arrays.toString("8986012084232991900".getBytes("utf-8")));
-//            System.out.println(Arrays.toString(aesEncryptToBytes("8986012084232991900","JR7k9nEWbYhcm7jpyQHCdA==")));
-//            System.out.println(Arrays.toString(iosStr.getBytes()));
-
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
 
